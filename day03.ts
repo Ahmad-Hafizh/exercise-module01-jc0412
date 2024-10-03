@@ -103,9 +103,7 @@ console.log(remainWord);
 // program 2
 // finding first & last index search word index for word accuracy
 const firstIndex: number = sentence.indexOf(searchWord);
-console.log(firstIndex);
 const lastIndex: number = firstIndex + searchWord.length - 1;
-console.log(lastIndex);
 // finding the search word
 const selectedWord2: string = sentence.slice(firstIndex, lastIndex + 1);
 // variable that store the remain word
@@ -116,7 +114,6 @@ for (let i = 0; i < sentence.length; i++) {
   let letter = sentence.slice(i, i + 1);
   if (i < firstIndex || i > lastIndex) {
     remainWord2 += letter;
-    console.log(remainWord2);
   }
 }
 console.log(selectedWord2);
@@ -125,8 +122,3 @@ console.log(remainWord2);
 // bisa pake replace sih wkwkw yasudahlah
 let remainWord3 = sentence.replace(searchWord, '');
 console.log(remainWord3);
-
-// 6
-// Write a code to capitalize the first letter of each word in a string
-// ○ Example : “hello world” → “Hello World”
-let sentence2 = 'hello world';
