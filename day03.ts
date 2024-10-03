@@ -27,7 +27,23 @@ console.log(renderM);
 // ○ Example : ‘madam’ → palindrome
 
 // variable input for word
-let word: string = 'madam';
-
+let word: string = 'coke';
+let mirror: string = '';
+let isPalindrome: boolean = false;
 // separating every letter and structure it from the back
+// looping to separate the word and reunited the mirror
+for (let i = word.length; i > 0; i--) {
+  console.log(i);
+  let letter = word.slice(i - 1, i);
+  console.log(letter);
+
+  mirror += letter;
+  console.log(mirror);
+}
 // comparing the mirror word and the original word
+if (word === mirror) {
+  isPalindrome = true;
+}
+
+// output render the statement which tell is word is palindrome or not
+console.log(isPalindrome);
