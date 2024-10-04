@@ -8,12 +8,12 @@ console.log(space);
 // variable for storing result
 let resultCap: string = '';
 // variable for boolean if the first letter was true
-let firstLetter: boolean = false;
+let firstLetter: boolean = true;
 // looping for separating letter from sentence
 for (let i = 0; i < space.length; i++) {
   let letter: string = space.slice(i, i + 1);
   // conditional statement that change the value of boolean if letter was a ' '
-  if (letter === ' ') {
+  if (letter === ' ' || i === 0) {
     firstLetter = true;
     // if statement to remove the spacing that added before
     if (i === 0) {
@@ -27,7 +27,7 @@ for (let i = 0; i < space.length; i++) {
     firstLetter = false;
     resultCap += capped;
   } else {
-    resultCap += letter;
+    resultCap += letter.toLowerCase();
   }
 }
 // console log result cap
