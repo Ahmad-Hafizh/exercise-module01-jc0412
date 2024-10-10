@@ -118,33 +118,44 @@ console.log(
 function switchKey(obj: any[]) {
   let data: any = obj[0];
   let output: any;
+  const arrOut: any[] = [];
   for (const key in data) {
     output = { ...output, [data[key]]: key };
   }
-  console.log(output);
-  return [output];
+  arrOut.push(output);
+  // return [output]
+  return arrOut;
 }
 console.log(switchKey([{ name: 'David', age: 20 }]));
 
+function switchKey2(obj: any[]) {
+  let output: any;
+  const arrOut: any[] = [];
+
+  console.log(obj);
+  obj.map((data) => {
+    console.log(data);
+    for (const key in data) {
+      output = { ...output, [data[key]]: key };
+    }
+    arrOut.push(output);
+    output = {};
+  });
+  // return [output]
+  return arrOut;
+}
+console.log(
+  switchKey2([
+    { name: 'David', age: 20 },
+    { name: 'Matt', age: 99 },
+  ])
+);
 //5 recursion
-// function getFactorial(input: number) {
-//   let nextNum: number = input;
-//   let save: number[] = [];
-//   if (nextNum >= 1) {
-//     let output = (input: number, nextNum: number) => {
-//       console.log(nextNum);
-
-//       let result = input * nextNum;
-//       console.log(result);
-
-//       input -= 2;
-//       nextNum -= 1;
-//       save.push(result);
-//       console.log(save);
-//       output(input, nextNum);
-//     };
-//   } else if (nextNum === 0) {
-//     return save;
-//   }
-// }
-// console.log(getFactorial(5));
+function getFactorial(input: number) {
+  if (input === 0) {
+    return 1;
+  } else {
+    return input * getFactorial(input - 1);
+  }
+}
+console.log(getFactorial(5));
