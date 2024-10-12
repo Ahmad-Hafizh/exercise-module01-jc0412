@@ -133,10 +133,15 @@ function switchKey2(obj: any[]) {
   const arrOut: any[] = [];
 
   console.log(obj);
-  obj.map((data) => {
+  obj.forEach((data) => {
     console.log(data);
     for (const key in data) {
+      console.log(data[key]);
+      console.log(key);
+
+      // mengakses value butuh [] untuk deklarasi prop
       output = { ...output, [data[key]]: key };
+      // output[data[key]] = key;
     }
     arrOut.push(output);
     output = {};
@@ -146,6 +151,31 @@ function switchKey2(obj: any[]) {
 }
 console.log(
   switchKey2([
+    { name: 'David', age: 20 },
+    { name: 'Matt', age: 99 },
+  ])
+);
+function switchKey3(obj: any[]) {
+  let newArray = obj.map((data) => {
+    let output: any = {};
+    console.log(data);
+    for (const key in data) {
+      console.log(data[key]);
+      console.log(key);
+      let value: any = data[key];
+      // mengakses value butuh [] untuk deklarasi prop
+      // output = { ...output, [data[key]]: key };
+      output[value] = key;
+    }
+
+    return output;
+  });
+
+  // return [output]
+  return newArray;
+}
+console.log(
+  switchKey3([
     { name: 'David', age: 20 },
     { name: 'Matt', age: 99 },
   ])
