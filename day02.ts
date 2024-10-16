@@ -65,7 +65,7 @@ console.log(`hasil dari faktorial ${factorial} adalah ${countFactorial}`);
 // Write a code to print the first N fibonacci numbers
 // ○ Example: 15 → 610
 //variable yang menyimpan N
-let fN = 15;
+let fN = 5;
 let first = 0;
 let second = 1;
 let countF = 0;
@@ -77,4 +77,4 @@ for (let i = 1; i <= fN; i++) {
   second = countF;
   console.log(countF);
 }
-console.log(first);
+console.log(second);
